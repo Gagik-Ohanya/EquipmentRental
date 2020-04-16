@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using AutoMapper.Extensions.ExpressionMapping;
 using EquipmentRental.BLL.AutoMapping;
+using EquipmentRental.BLL.Facades;
+using EquipmentRental.BLL.Facades.Interfaces;
 using EquipmentRental.BLL.Services;
 using EquipmentRental.BLL.Services.Interfaces;
 using EquipmentRental.DAL.Repositories;
@@ -30,6 +32,13 @@ namespace EquipmentRental.BLL.Extensions
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IEquipmentService, EquipmentService>();
             services.AddScoped<IRentalService, RentalService>();
+
+            return services;
+        }
+
+        public static IServiceCollection AddFacades(this IServiceCollection services)
+        {
+            services.AddScoped<IEquipmentFacade, EquipmentFacade>();
 
             return services;
         }

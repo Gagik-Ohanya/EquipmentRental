@@ -39,6 +39,7 @@ namespace EquipmentRental
 
             services.AddRepositories();
             services.AddServices();
+            services.AddFacades();
 
             services.AddMapper();
 
